@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <div class="row">
+    <!-- Title -->
+    <div class="col-md-12 text-center mb-4">
+      <h1>Company Order Report</h1>
+      <p class="text-muted">Avg. Reports</p>
+    </div>
+    <hr />
+
+    <!-- Select Dropdown -->
+    <div class="col-md-6 d-flex align-items-center">
+      <div class="text-gray-500 fs-7 me-2">
+        <label for="Search">Search</label>
+        <input type="text" placeholder="Search" />
+      </div>
+    </div>
+
+    <!-- Calendar Inputs -->
+    <div class="col-md-6 d-flex align-items-center justify-content-end">
+      <div class="text-gray-500 fs-7 me-2">From Date:</div>
+      <input
+        type="date"
+        class="form-control form-control-transparent text-gray-800 fs-base lh-1 fw-bold py-0 ps-3"
+        [(ngModel)]="fromDate"
+      />
+      <div class="text-gray-500 fs-7 me-2 ms-3">To Date:</div>
+      <input
+        type="date"
+        class="form-control form-control-transparent text-gray-800 fs-base lh-1 fw-bold py-0 ps-3"
+        [(ngModel)]="toDate"
+      />
+    </div>
+  </div>
+  <hr />
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Voucher No#</th>
+        <th>Date and Time</th>
+        <th>Full Name</th>
+        <th>Detail</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</div>

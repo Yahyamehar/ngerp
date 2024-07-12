@@ -1,0 +1,258 @@
+/* Global styles */
+$primary-color: #007bff; /* Define primary color */
+
+body {
+  font-family: Arial, sans-serif; /* Set default font family */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+/* Container styles */
+.container {
+  padding: 20px; /* Add padding to the container */
+  border: 1px solid #ccc; /* Add border to the container */
+  border-radius: 10px; /* Add border radius to the container */
+  background-color: #fff; /* Set background color of the container */
+}
+
+/* Heading styles */
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0; /* Remove margin from the top of headings */
+}
+
+h2 {
+  font-size: 1.5rem; /* Set font size for headings */
+  margin-bottom: 20px; /* Add margin at the bottom of headings */
+  text-align: center; /* Center align headings */
+}
+
+/* Button styles */
+.btn {
+  font-size: 1rem; /* Set font size for buttons */
+  padding: 10px 20px; /* Set padding for buttons */
+  border-radius: 5px; /* Add border radius to buttons */
+  cursor: pointer; /* Add cursor pointer to buttons */
+}
+
+.btn-primary {
+  background-color: $primary-color; /* Set primary button background color */
+  color: #fff; /* Set primary button text color */
+}
+
+.btn-primary:hover {
+  background-color: darken($primary-color, 10%); /* Darken primary button background color on hover */
+}
+
+.btn-danger {
+  background-color: #dc3545; /* Set danger button background color */
+  color: #fff; /* Set danger button text color */
+}
+
+.btn-danger:hover {
+  background-color: #c82333; /* Set danger button background color on hover */
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 20px; /* Add margin at the bottom of form groups */
+}
+
+label {
+  font-weight: bold; /* Set font weight of labels */
+}
+
+input[type="text"],
+select,
+textarea {
+  border: 1px solid #ccc; /* Set border of form inputs */
+  border-radius: 5px; /* Add border radius to form inputs */
+  padding: 10px; /* Add padding to form inputs */
+  width: 100%; /* Set width of form inputs */
+  box-sizing: border-box; /* Ensure padding is included in the width */
+  margin-bottom: 10px; /* Add margin at the bottom of form inputs */
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse; /* Remove default spacing between table cells */
+  margin-top: 20px; /* Add space above the table */
+}
+
+.table th, .table td {
+  padding: 10px; /* Add padding to table cells */
+  text-align: center; /* Center align table cells */
+  border: 1px solid #ddd; /* Add borders to table cells */
+}
+
+.table th {
+  background-color: #f0f0f0; /* Set background color of table headings */
+}
+
+.table tbody tr:nth-child(odd) {
+  background-color: #f9f9f9; /* Set background color for striped rows */
+}
+
+.table tbody tr:hover {
+  background-color: #eaeaea; /* Set background color for rows on hover */
+}
+
+/* Modal styles */
+.modal {
+  display: none; /* Hide modal by default */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  z-index: 9999; /* Ensure modal is on top of other elements */
+}
+
+.modal-content {
+  background-color: #fff; /* Set background color of modal content */
+  border-radius: 10px; /* Add border radius to modal content */
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Add box shadow to modal content */
+  max-width: 500px; /* Set maximum width of modal content */
+  margin: 0 auto; /* Center modal content horizontally */
+  padding: 20px; /* Add padding to modal content */
+}
+
+.modal-header {
+  background-color: #f0f0f0; /* Set background color of modal header */
+  border-radius: 10px 10px 0 0; /* Add border radius to modal header */
+  padding: 15px; /* Add padding to modal header */
+}
+
+.modal-body {
+  padding: 15px; /* Add padding to modal body */
+}
+
+.modal-footer {
+  padding: 15px; /* Add padding to modal footer */
+  text-align: right; /* Align modal footer content to the right */
+}
+
+.btn-close {
+  color: #000; /* Set color of close button */
+  opacity: 0.5; /* Set initial opacity of close button */
+}
+
+.btn-close:hover {
+  opacity: 1; /* Set opacity of close button on hover */
+}
+
+/* Additional custom styles */
+
+/* Style for icons */
+.icon-large {
+  font-size: 1.5rem; /* Set font size for large icons */
+  cursor: pointer; /* Add cursor pointer to icons */
+}
+
+/* Style for labels with icons */
+.label-with-icon {
+  display: flex; /* Set display to flex for label with icon */
+  align-items: center; /* Align items center for label with icon */
+}
+
+.label-with-icon i {
+  margin-right: 10px; /* Add margin to the right of icon */
+}
+
+/* Style for tooltips */
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 120px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+  position: absolute;
+  z-index: 1;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -60px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Style for dropdowns */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: #333;
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  background-color: #f0f0f0;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Style for badges */
+.badge {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+/* Style for progress bars */
+.progress {
+  width: 100%;
+  height: 20px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  line-height: 20px;
+  color: #fff;
+  text-align: center;
+  background-color: #007bff;
+}
+
+/* Style for image placeholders */
+.image-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #f0f0f0;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #888;
+  font-size: 1.2rem;
+}

@@ -1,0 +1,48 @@
+<div class="container mt-4">
+  <header>
+    <h1 class="text-center mb-4">Branch Stock Report</h1>
+  </header>
+
+  <div class="row">
+    <div class="col-md-3">
+      <label for="selectedBranch" class="form-label">Select Branch:</label>
+      <select class="form-select form-select-sm" id="selectedBranch" [(ngModel)]="selectedBranch">
+        <option value="">Select User</option>
+        <option value="Pimps Cosmetics">Yahya Cosmetics</option>
+        <option value="Dinko Store">Abid Store</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="selectedBrand" class="form-label">Select Brand:</label>
+      <select class="form-select form-select-sm" id="selectedBrand" [(ngModel)]="selectedBrand">
+        <option value="">Select User</option>
+        <option value="Pimps Cosmetics">Yahya Cosmetics</option>
+        <option value="Dinko Store">Abid Store</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="selectedCategory" class="form-label">Select Category:</label>
+      <select class="form-select form-select-sm" id="selectedCategory" [(ngModel)]="selectedCategory">
+        <option value="">Select User</option>
+        <option value="Category A">A</option>
+        <option value="Category B">B</option>
+      </select>
+    </div>
+    <div class="col-md-3">
+      <label for="selectedSubCategory" class="form-label">Select Sub Category:</label>
+      <select class="form-select form-select-sm" id="selectedSubCategory" [(ngModel)]="selectedSubCategory">
+        <option value="">Select Status</option>
+        <option value="Category A">Y</option>
+        <option value="Category B">N</option>
+      </select>
+    </div>
+  </div>
+  <hr />
+  <div class="row mt-3">
+    <div class="col-md-12">
+      <button class="btn btn-primary" (click)="generatePDF()">
+        Generate Report
+      </button>
+    </div>
+  </div>
+</div>

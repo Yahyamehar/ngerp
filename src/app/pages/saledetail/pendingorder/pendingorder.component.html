@@ -1,0 +1,62 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Pending Orders</h2>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-6 form-group">
+      <label for="search" class="label-with-icon">Search:</label>
+      <input
+        type="text"
+        placeholder="Search"
+        class="form-control"
+      />
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-6 form-group">
+        <label for="fromSelect">Records:</label>
+        <select name="fromCompany" class="form-control" id="fromSelect">
+            <option value="company1">10 &blacktriangledown;</option>
+            <option value="company2">20 &blacktriangledown;</option>
+            <!-- Add more options as needed -->
+        </select>
+    </div>
+</div>
+
+<hr>
+
+  <h2 class="text-center mt-5">Transaction Details</h2>
+  <!-- Added margin-top to separate it from the form --><hr>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Voucher No</th>
+        <th>From Branch</th>
+        <th>To Branch</th>
+        <th>Full Name</th>
+        <th>View</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Your data rows will go here -->
+    </tbody>
+  </table>
+  <br><br>
+  <hr>
+
+  <div class="row mt-3">
+    <div class="col-md-6 text-center">
+      <button type="button" class="btn btn-link">
+        &larr; Previous
+      </button>
+    </div>
+    <div class="col-md-6 text-center">
+      <button type="button" class="btn btn-link">
+        Next &rarr;
+      </button>
+    </div>
+  </div>
+</div>

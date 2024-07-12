@@ -1,0 +1,248 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Employees</h2>
+  <hr />
+  <button
+    class="btn btn-primary mb-3"
+    (click)="openAddBrandModal(addBrandModal)"
+  >
+    Add New +
+  </button>
+  <hr />
+  <br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Designation</th>
+        <th>Full Name</th>
+        <th>User Contact</th>
+        <th>User CNIC</th>
+        <th>Salary</th>
+        <th>Gender</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands">
+        <td>{{ brand.id }}</td>
+        <td>{{ brand.designation }}</td>
+        <td>{{ brand.name }}</td>
+        <td>{{ brand.contact }}</td>
+        <td>{{ brand.cnic }}</td>
+        <td>{{ brand.salary }}</td>
+        <td>{{ brand.gender }}</td>
+        <td>
+          <button
+            class="btn btn-info btn-sm me-2"
+            (click)="openEditBrandModal(editBrandModal, brand)"
+          >
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteBrand(brand)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr />
+<ng-template #addBrandModal let-modal>
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Add Brand</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandDesignation" class="form-label">Designation</label>
+        <select
+          class="form-select"
+          id="brandDesignation"
+          [(ngModel)]="newBrand.designation"
+        >
+          <option value="Manager">Manager</option>
+          <option value="Employee">Employee</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandName" class="form-label">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandName"
+          [(ngModel)]="newBrand.name"
+        />
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandContact" class="form-label">User Contact</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandContact"
+          [(ngModel)]="newBrand.contact"
+        />
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandCNIC" class="form-label">User CNIC</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandCNIC"
+          [(ngModel)]="newBrand.cnic"
+        />
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandSalary" class="form-label">Salary</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandSalary"
+          [(ngModel)]="newBrand.salary"
+        />
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandGender" class="form-label">Gender</label>
+        <select
+          class="form-select"
+          id="brandGender"
+          [(ngModel)]="newBrand.gender"
+        >
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+    </div>
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('cancel')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="modal.close('Save click')"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #editBrandModal let-modal>
+  <!-- Modal content -->
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Edit Brand</h4>
+      <button
+        type="button"
+        class="btn-close"
+        aria-label="Close"
+        (click)="modal.dismiss('Cross click')"
+      ></button>
+    </div>
+    <div class="modal-body">
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandDesignation" class="form-label">Designation</label>
+        <select
+          class="form-select"
+          id="brandDesignation"
+          [(ngModel)]="editedBrand.designation"
+        >
+          <option value="Manager">Manager</option>
+          <option value="Employee">Employee</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandName" class="form-label">Full Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandName"
+          [(ngModel)]="editedBrand.name"
+        />
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandContact" class="form-label">User Contact</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandContact"
+          [(ngModel)]="editedBrand.contact"
+        />
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandCNIC" class="form-label">User CNIC</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandCNIC"
+          [(ngModel)]="editedBrand.cnic"
+        />
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandSalary" class="form-label">Salary</label>
+        <input
+          type="text"
+          class="form-control"
+          id="brandSalary"
+          [(ngModel)]="editedBrand.salary"
+        />
+      </div>
+      <!-- Other input fields -->
+      <div class="mb-3">
+        <label for="brandGender" class="form-label">Gender</label>
+        <select
+          class="form-select"
+          id="brandGender"
+          [(ngModel)]="editedBrand.gender"
+        >
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <!-- Add more options as needed -->
+        </select>
+      </div>
+    </div>
+    <!-- Modal footer -->
+    <div class="modal-footer">
+      <button
+        type="button"
+        class="btn btn-secondary"
+        (click)="modal.dismiss('cancel')"
+      >
+        Cancel
+      </button>
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="modal.close('Save click')"
+      >
+        Save
+      </button>
+    </div>
+  </div>
+</ng-template>

@@ -1,0 +1,27 @@
+<ng-container *ngIf="appFooterContainerCSSClass">
+  <!--begin::Footer container-->
+  <div class="app-container" [ngClass]="appFooterContainerCSSClass">
+    <ng-container *ngTemplateOutlet="footerView"></ng-container>
+  </div>
+  <!--end::Footer container-->
+</ng-container>
+
+<ng-container *ngIf="!appFooterContainerCSSClass">
+  <ng-container *ngTemplateOutlet="footerView"></ng-container>
+</ng-container>
+
+<ng-template #footerView>
+  <!--begin::Copyright-->
+  <div class="text-gray-900 order-2 order-md-1">
+    <span class="text-muted fw-semibold me-1">{{currentDateStr}}&copy;</span>
+    <a routerLink="/" class="text-gray-800 text-hover-primary">Costmetics</a>
+  </div>
+  <!--end::Copyright-->
+
+  <!--begin::Menu-->
+  <ul class="menu menu-gray-600 menu-hover-primary fw-semibold order-1">
+    <li class="menu-item"><a routerLink="/" class="menu-link px-3">Designed by Yahya</a></li>
+  </ul>
+  <!--end::Menu-->
+
+</ng-template>

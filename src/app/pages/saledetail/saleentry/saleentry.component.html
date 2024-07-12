@@ -1,0 +1,196 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Create Sale Invoice | SALEM24201641</h2>
+  <hr>
+  <!-- Added styling to center the text -->
+  <div class="col-md-6 form-group">
+    <label for="joiningDate">Date</label>
+    <input
+      type="date"
+      class="form-control"
+      id="joiningDate"
+      [(ngModel)]="formData.joiningDate"
+    />
+  </div>
+
+  <div class="text-right">
+    <i class="fas fa-print text-primary mx-2 icon-large" (click)="print()"></i>
+    <i class="fas fa-save text-success mx-2 icon-large" (click)="save()"></i>
+    <i
+      class="fas fa-trash-alt text-danger mx-2 icon-large"
+      (click)="delete()"
+    ></i>
+    <i class="fas fa-ban text-warning mx-2 icon-large" (click)="cancel()"></i>
+    <i class="fas fa-plus text-info mx-2 icon-large" (click)="add()"></i>
+    <i class="fas fa-search text-dark mx-2 icon-large" (click)="search()"></i>
+    <i
+      class="fas fa-history text-success mx-2 icon-large"
+      (click)="lastEntry()"
+    ></i>
+    <i
+      class="fas fa-search text-primary mx-2 icon-large"
+      (click)="search()"
+    ></i>
+  </div>
+
+
+  <div class="col-xl-12 order">
+    <!--begin::Table Widget 4-->
+    <div class="card card-flush h-xl-100">
+      <!--begin::Card header-->
+      <div class="card-header pt-7">
+        <!--begin::Title-->
+
+        <!--end::Title-->
+        <!--begin::Actions-->
+        <div class="card-toolbar">
+          <!--begin::Filters-->
+          <div class="d-flex flex-stack flex-wrap gap-4">
+            <!--begin::Destination-->
+            <div class="d-flex align-items-center fw-bold">
+              <!--begin::Label-->
+              <div class="text-gray-500 fs-7 me-2">Entry Type</div>
+              <!--end::Label-->
+              <!--begin::Select-->
+              <select
+                class="form-select form-select-transparent text-graY-800 fs-base lh-1 fw-bold py-0 ps-3 w-auto"
+                data-control="select2"
+                data-hide-search="true"
+                data-dropdown-css-class="w-150px"
+                data-placeholder="Select an option"
+              >
+                <option></option>
+                <option value="Show All" selected="selected">Show All</option>
+                <option value="a">Brand A</option>
+                <option value="b">Brand A</option>
+              </select>
+              <!--end::Select-->
+            </div>
+            <div class="d-flex align-items-center fw-bold">
+              <!--begin::Label-->
+              <div class="text-gray-500 fs-7 me-2">Payment Type</div>
+              <!--end::Label-->
+              <!--begin::Select-->
+              <select
+                class="form-select form-select-transparent text-graY-800 fs-base lh-1 fw-bold py-0 ps-3 w-auto"
+                data-control="select2"
+                data-hide-search="true"
+                data-dropdown-css-class="w-150px"
+                data-placeholder="Select an option"
+              >
+                <option></option>
+                <option value="Show All" selected="selected">Show All</option>
+                <option value="a">Brand A</option>
+                <option value="b">Brand A</option>
+              </select>
+              <!--end::Select-->
+            </div>
+            <!--end::Destination-->
+            <!--begin::Status-->
+            <div class="d-flex align-items-center fw-bold">
+              <!--begin::Label-->
+              <div class="text-gray-500 fs-7 me-2">Select Bank</div>
+              <!--end::Label-->
+              <!--begin::Select-->
+              <select
+                class="form-select form-select-transparent text-gray-900 fs-7 lh-1 fw-bold py-0 ps-3 w-auto"
+                data-control="select2"
+                data-hide-search="true"
+                data-dropdown-css-class="w-150px"
+                data-placeholder="Select an option"
+                data-kt-table-widget-4="filter_status"
+              >
+                <option></option>
+                <option value="Show All" selected="selected">Show All</option>
+                <option value="Shipped">Shipped</option>
+                <option value="Confirmed">Confirmed</option>
+                <option value="Rejected">Rejected</option>
+                <option value="Pending">Pending</option>
+              </select>
+              <!--end::Select-->
+            </div>
+            <!--end::Status-->
+            <!--begin::Search-->
+            <div class="position-relative my-1">
+              <i
+                class="ki-duotone ki-magnifier fs-2 position-absolute top-50 translate-middle-y ms-4"
+              >
+                <span class="path1"></span>
+                <span class="path2"></span>
+              </i>
+              <input
+                type="text"
+                class="form-control w-150px fs-7 ps-12"
+                placeholder="Description"
+              />
+            </div>
+            <div class="position-relative my-1">
+              <i
+                class="ki-duotone ki-magnifier fs-2 position-absolute top-50 translate-middle-y ms-4"
+              >
+                <span class="path1"></span>
+                <span class="path2"></span>
+              </i>
+              <input
+                type="number"
+                class="form-control w-150px fs-7 ps-12"
+                placeholder="Payment"
+              />
+            </div>
+            <!--end::Search-->
+          </div>
+          <!--begin::Filters-->
+        </div>
+        <!--end::Actions-->
+      </div>
+      <!--end::Card header-->
+      <!--begin::Card body-->
+      <hr>
+      <br />
+      <div class="card-body pt-2">
+        <!--begin::Table-->
+        <table
+          class="table align-middle table-row-dashed fs-6 gy-3"
+          id="kt_table_widget_4_table"
+        >
+          <!--begin::Table head-->
+          <thead>
+            <!--begin::Table row-->
+            <tr
+              class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0"
+            >
+              <th class="min-w-70px">Entry Date</th>
+              <th class="text-end min-w-100px">Entry Type</th>
+              <th class="text-end min-w-125px">Payment Type</th>
+              <th class="text-end min-w-100px">Bank</th>
+              <th class="text-end min-w-100px">Description</th>
+              <th class="text-end min-w-50px">Amount</th>
+              <th class="text-end"></th>
+            </tr>
+            <!--end::Table row-->
+          </thead>
+          <!--end::Table head-->
+          <!--begin::Table body-->
+
+          <!--end::Table body-->
+        </table>
+        <!--end::Table-->
+      </div>
+      <!--end::Card body-->
+    </div>
+    <!--end::Table Widget 4-->
+  </div>
+  <hr />
+  <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11">
+    <!--begin::Content-->
+    <div class="fs-6 fw-bold text-white">
+      <span class="d-block fs-2qx lh-1">Total :</span>
+    </div>
+    <!--end::Content-->
+    <!--begin::Content-->
+    <div class="fs-6 fw-bold text-white text-end">
+      <span class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total"
+        >Rs 93.46</span
+      >
+    </div>
+    <!--end::Content-->
+  </div>

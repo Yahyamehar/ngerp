@@ -1,0 +1,93 @@
+/* Employee Payroll Form */
+.employee-payroll-form {
+  .form-group {
+    margin-bottom: 20px;
+
+    label {
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="date"],
+    input[type="number"],
+    textarea {
+      border: 1px solid #ced4da;
+      border-radius: 0.25rem;
+      padding: 0.375rem 0.75rem;
+      transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+    }
+
+    input[type="text"]:focus,
+    input[type="date"]:focus,
+    input[type="number"]:focus,
+    textarea:focus {
+      border-color: #5a67d8;
+      outline: 0;
+      box-shadow: 0 0 0 0.2rem rgba(90, 103, 216, 0.25);
+    }
+  }
+
+  button[type="submit"] {
+    margin-top: 20px;
+    background-color: #5a67d8;
+    border-color: #5a67d8;
+
+    &:hover {
+      background-color: #4754b6;
+      border-color: #4754b6;
+    }
+  }
+}
+
+/* Profile Details */
+.profile-details {
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #ebedf2;
+
+    .btn {
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  }
+
+  .card-body {
+    padding: 1.5rem;
+
+    .row {
+      margin-bottom: 1rem;
+
+      .col-md-6 {
+        display: flex;
+        flex-direction: column;
+
+        .fw-semibold {
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  /* Additional styles for specific elements */
+  .badge {
+    font-size: 12px;
+    padding: 0.25rem 0.5rem;
+  }
+
+  a.text-hover-primary:hover {
+    color: #5a67d8; // Change to your desired hover color
+  }
+
+  .text-muted {
+    color: #6c757d; // Adjust as needed
+  }
+}
+
+.order {
+  border: 1px solid black;
+  border-radius: 10px;
+}
+

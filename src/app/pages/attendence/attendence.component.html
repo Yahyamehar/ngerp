@@ -1,0 +1,46 @@
+<div class="container mt-4">
+  <h2 class="text-center">Employee Attendance</h2>
+  <hr>
+
+
+  <div class="form-group">
+    <label for="datepicker">Select Date:</label>
+    <ngb-datepicker #dp [(ngModel)]="model" (navigate)="date = $event.next" />
+
+    <hr />
+
+    <button class="btn btn-sm btn-outline-primary me-2" (click)="model = today">
+      Select Today
+    </button>
+    <button
+      class="btn btn-sm btn-outline-primary me-2"
+      (click)="dp.navigateTo()"
+    >
+      To current month
+    </button>
+    <button
+      class="btn btn-sm btn-outline-primary me-2"
+      (click)="dp.navigateTo({ year: 2013, month: 2 })"
+    >
+      To Feb 2013
+    </button>
+  </div>
+<hr>
+  <table class="table table-striped mt-4">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Name</th>
+        <th>Attendance Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employee of employees">
+        <td>{{ employee.id }}</td>
+        <td>{{ employee.name }}</td>
+        <td>{{ employee.attendance }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <hr>
+</div>

@@ -1,0 +1,217 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Suppliers</h2>
+  <hr />
+  <button
+    class="btn btn-primary mb-3"
+    (click)="openAddBrandModal(addBrandModal)"
+  >
+    Add Supplier
+  </button>
+  <hr />
+  <br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Contact</th>
+        <th>CNIC</th>
+        <th>Gender</th>
+        <th>Address</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands">
+        <td>{{ brand.id }}</td>
+        <td>{{ brand.name }}</td>
+        <td>{{ brand.last }}</td>
+        <td>{{ brand.contact }}</td>
+        <td>{{ brand.cnic }}</td>
+        <td>{{ brand.gender }}</td>
+        <td>{{ brand.address }}</td>
+        <td>
+          <button
+            class="btn btn-info btn-sm me-2"
+            (click)="openEditBrandModal(editBrandModal, brand)"
+          >
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteBrand(brand)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr />
+<ng-template #addBrandModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Supplier</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="brandName" class="form-label">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandName"
+        [(ngModel)]="newBrand.name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.last"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Contact </label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.contact"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">CNIC </label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.cnic"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Gender</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.gender"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Address</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.address"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.dismiss('cancel')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #editBrandModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit Supplier Data</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="brandName" class="form-label">Full Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandName"
+        [(ngModel)]="editedBrand.name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Last Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="editedBrand.last"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Contact</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.contact"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">CNIC </label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.cnic"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Gender </label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.gender"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Address </label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.address"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.dismiss('cancel')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>

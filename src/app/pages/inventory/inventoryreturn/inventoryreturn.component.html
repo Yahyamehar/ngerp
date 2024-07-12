@@ -1,0 +1,79 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Branch Stock Return | S-return-724161820</h2>
+  <!-- Added styling to center the text -->
+
+  <div class="text-right">
+    <i class="fas fa-print text-primary mx-2 icon-large" (click)="print()"></i>
+    <i class="fas fa-save text-success mx-2 icon-large" (click)="save()"></i>
+    <i
+      class="fas fa-trash-alt text-danger mx-2 icon-large"
+      (click)="delete()"
+    ></i>
+    <i class="fas fa-ban text-warning mx-2 icon-large" (click)="cancel()"></i>
+    <i class="fas fa-plus text-info mx-2 icon-large" (click)="add()"></i>
+    <i class="fas fa-search text-dark mx-2 icon-large" (click)="search()"></i>
+    <i
+      class="fas fa-history text-success mx-2 icon-large"
+      (click)="lastEntry()"
+    ></i>
+    <i
+      class="fas fa-search text-primary mx-2 icon-large"
+      (click)="search()"
+    ></i>
+  </div>
+
+  <div class="form-group mt-4">
+    <label for="barcode" class="label-with-icon"
+      >Barcode Search:<i class="fas fa-barcode fa-lg ml-4"></i
+    ></label>
+    <input
+      type="text"
+      placeholder="Enter Barcode"
+      class="form-control"
+      id="barcode"
+    />
+  </div>
+
+  <div class="form-group">
+    <label for="companySelect">Select Branch:</label>
+    <select class="form-control" id="companySelect">
+      Sitel Company
+    </select>
+  </div>
+
+  <h2 class="text-center mt-5">Transaction Details</h2>
+  <!-- Added margin-top to separate it from the form -->
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>No#</th>
+        <th>Date</th>
+        <th>Product#</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Qty</th>
+        <th>Price</th>
+        <th>Total</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Your data rows will go here -->
+    </tbody>
+  </table>
+  <hr><hr>
+  <div class="d-flex flex-stack bg-success rounded-3 p-6 mb-11">
+    <!--begin::Content-->
+    <div class="fs-6 fw-bold text-white">
+      <span class="d-block fs-2qx lh-1">Total :</span>
+    </div>
+    <!--end::Content-->
+    <!--begin::Content-->
+    <div class="fs-6 fw-bold text-white text-end">
+      <span class="d-block fs-2qx lh-1" data-kt-pos-element="grant-total"
+        >Rs 93.46</span
+      >
+    </div>
+    <!--end::Content-->
+  </div>
+</div>

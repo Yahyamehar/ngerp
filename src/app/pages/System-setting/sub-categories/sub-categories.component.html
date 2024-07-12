@@ -1,0 +1,180 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Sub - Categories</h2>
+  <hr />
+  <button
+    class="btn btn-primary mb-3"
+    (click)="openAddBrandModal(addBrandModal)"
+  >
+    Add Category
+  </button>
+  <hr />
+  <br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Brand Name</th>
+        <th>Category Name</th>
+        <th>Sub Category</th>
+        <th>Sub Category Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands">
+        <td>{{ brand.id }}</td>
+        <td>{{ brand.name }}</td>
+        <td>{{ brand.category }}</td>
+        <td>{{ brand.sub }}</td>
+        <td>{{ brand.description }}</td>
+        <td>
+          <button
+            class="btn btn-info btn-sm me-2"
+            (click)="openEditBrandModal(editBrandModal, brand)"
+          >
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteBrand(brand)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr />
+<ng-template #addBrandModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Brand</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="brandName" class="form-label">Brand Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandName"
+        [(ngModel)]="newBrand.name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Category Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.category"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Sub Category </label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.sub"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label"
+        >Sub Category description</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.description"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.dismiss('cancel')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #editBrandModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit Brand</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="brandName" class="form-label">Brand Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandName"
+        [(ngModel)]="editedBrand.name"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Category Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="editedBrand.category"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label">Sub Category</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.sub"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="brandDescription" class="form-label"
+        >Sub Category Description
+      </label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandDescription"
+        [(ngModel)]="newBrand.description"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.dismiss('cancel')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>

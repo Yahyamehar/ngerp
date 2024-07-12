@@ -1,0 +1,141 @@
+<div class="col-xl-12 order">
+  <!--begin::Table Widget 4-->
+  <div class="card card-flush h-xl-100">
+    <!--begin::Card header-->
+    <div class="card-header pt-7">
+      <!--begin::Title-->
+      <h3 class="card-title align-items-start flex-column">
+        <span class="card-label fw-bold text-gray-800"
+          >Company Stock Reordering</span
+        >
+        <span class="text-gray-500 mt-1 fw-semibold fs-6"
+          >Avg. 57 orders per day</span
+        >
+      </h3>
+      <!--end::Title-->
+      <!--begin::Actions-->
+      <div class="card-toolbar">
+        <!--begin::Filters-->
+        <div class="d-flex flex-stack flex-wrap gap-4">
+          <!--begin::Destination-->
+          <div class="d-flex align-items-center fw-bold">
+            <!--begin::Label-->
+            <div class="text-gray-500 fs-7 me-2">Select Brand</div>
+            <!--end::Label-->
+            <!--begin::Select-->
+            <select
+              class="form-select form-select-transparent text-graY-800 fs-base lh-1 fw-bold py-0 ps-3 w-auto"
+              data-control="select2"
+              data-hide-search="true"
+              data-dropdown-css-class="w-150px"
+              data-placeholder="Select an option"
+            >
+              <option></option>
+              <option value="Show All" selected="selected">Show All</option>
+              <option value="a">Brand A</option>
+              <option value="b">Brand A</option>
+            </select>
+            <!--end::Select-->
+          </div>
+          <div class="d-flex align-items-center fw-bold">
+            <!--begin::Label-->
+            <div class="text-gray-500 fs-7 me-2">Select Category</div>
+            <!--end::Label-->
+            <!--begin::Select-->
+            <select
+              class="form-select form-select-transparent text-graY-800 fs-base lh-1 fw-bold py-0 ps-3 w-auto"
+              data-control="select2"
+              data-hide-search="true"
+              data-dropdown-css-class="w-150px"
+              data-placeholder="Select an option"
+            >
+              <option></option>
+              <option value="Show All" selected="selected">Show All</option>
+              <option value="a">Brand A</option>
+              <option value="b">Brand A</option>
+            </select>
+            <!--end::Select-->
+          </div>
+          <!--end::Destination-->
+          <!--begin::Status-->
+          <div class="d-flex align-items-center fw-bold">
+            <!--begin::Label-->
+            <div class="text-gray-500 fs-7 me-2">Select-Sub Category</div>
+            <!--end::Label-->
+            <!--begin::Select-->
+            <select
+              class="form-select form-select-transparent text-gray-900 fs-7 lh-1 fw-bold py-0 ps-3 w-auto"
+              data-control="select2"
+              data-hide-search="true"
+              data-dropdown-css-class="w-150px"
+              data-placeholder="Select an option"
+              data-kt-table-widget-4="filter_status"
+            >
+              <option></option>
+              <option value="Show All" selected="selected">Show All</option>
+              <option value="Shipped">Shipped</option>
+              <option value="Confirmed">Confirmed</option>
+              <option value="Rejected">Rejected</option>
+              <option value="Pending">Pending</option>
+            </select>
+            <!--end::Select-->
+          </div>
+          <!--end::Status-->
+          <!--begin::Search-->
+          <div class="position-relative my-1">
+            <i
+              class="ki-duotone ki-magnifier fs-2 position-absolute top-50 translate-middle-y ms-4"
+            >
+              <span class="path1"></span>
+              <span class="path2"></span>
+            </i>
+            <input
+              type="text"
+              data-kt-table-widget-4="search"
+              class="form-control w-150px fs-7 ps-12"
+              placeholder="Search"
+            />
+          </div>
+          <!--end::Search-->
+        </div>
+        <!--begin::Filters-->
+      </div>
+      <!--end::Actions-->
+    </div>
+
+    <!--end::Card header-->
+    <!--begin::Card body-->
+
+    <hr>
+    <div class="card-body pt-2">
+
+      <!--begin::Table-->
+      <table
+        class="table align-middle table-row-dashed fs-6 gy-3"
+        id="kt_table_widget_4_table"
+      >
+        <!--begin::Table head-->
+        <thead>
+          <!--begin::Table row-->
+          <tr class="text-start text-gray-500 fw-bold fs-7 text-uppercase gs-0">
+            <th class="min-w-70px">Code</th>
+            <th class="text-end min-w-100px">Brand#</th>
+            <th class="text-end min-w-125px">Category</th>
+            <th class="text-end min-w-100px">Sub Category</th>
+            <th class="text-end min-w-100px">Product</th>
+            <th class="text-end min-w-50px">current</th>
+            <th class="text-end"></th>
+          </tr>
+          <!--end::Table row-->
+        </thead>
+        <!--end::Table head-->
+        <!--begin::Table body-->
+
+        <!--end::Table body-->
+      </table>
+      <!--end::Table-->
+    </div>
+    <!--end::Card body-->
+  </div>
+  <!--end::Table Widget 4-->
+</div>

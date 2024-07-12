@@ -1,0 +1,116 @@
+<div class="container mt-5">
+  <h2 class="text-center mb-4">Godam</h2>
+  <hr />
+  <button
+    class="btn btn-primary mb-3"
+    (click)="openAddBrandModal(addBrandModal)"
+  >
+    Add Godam Data
+  </button>
+  <hr />
+  <br />
+  <table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Godam Name</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let brand of brands">
+        <td>{{ brand.id }}</td>
+        <td>{{ brand.name }}</td>
+        <td>
+          <button
+            class="btn btn-info btn-sm me-2"
+            (click)="openEditBrandModal(editBrandModal, brand)"
+          >
+            Edit
+          </button>
+          <button class="btn btn-danger btn-sm" (click)="deleteBrand(brand)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr />
+<ng-template #addBrandModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Add Godam Data</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="brandName" class="form-label">Godam Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandName"
+        [(ngModel)]="newBrand.name"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.dismiss('cancel')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
+
+<ng-template #editBrandModal let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">Edit Godam data</h4>
+    <button
+      type="button"
+      class="btn-close"
+      aria-label="Close"
+      (click)="modal.dismiss('Cross click')"
+    ></button>
+  </div>
+  <div class="modal-body">
+    <div class="mb-3">
+      <label for="brandName" class="form-label">Godam Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="brandName"
+        [(ngModel)]="editedBrand.name"
+      />
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button
+      type="button"
+      class="btn btn-secondary"
+      (click)="modal.dismiss('cancel')"
+    >
+      Cancel
+    </button>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="modal.close('Save click')"
+    >
+      Save
+    </button>
+  </div>
+</ng-template>
